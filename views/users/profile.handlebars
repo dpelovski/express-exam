@@ -1,0 +1,12 @@
+<h1>Tweets written by me:</h1>
+{{#each tweets}}
+    <div>{{this.message}}</div>
+    </br>
+{{/each}}
+<h1>Tweets that mention me: </h1>
+{{#each handles}}
+    <div>{{this.name}}</div>
+    {{#each ../allTwits}}
+    <div>{{this.message}}</div>
+    {{/each}}
+{{/each}}

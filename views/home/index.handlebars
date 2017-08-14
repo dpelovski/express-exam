@@ -1,0 +1,18 @@
+{{#each tweets}}
+    </br>
+    <div>{{this.tweet.message}}</div>
+    {{#each this.tags}}
+    <a href="/tag/{{this}}">
+        <div>#{{this}}</div>
+    </a>
+    {{/each}}
+    {{#if ../isAdmin}}
+    <form action="/delete/{{this.tweet._id}}" method="POST">
+        <input type="submit" value="Delete Tweet" />
+    </form>
+    <a href="/edit/{{this.tweet._id}}">Edit Tweet</a>
+    {{/if}}
+    </br>
+    {{else}}
+    <h2>No tweets available</div>
+{{/each}}

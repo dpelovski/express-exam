@@ -1,0 +1,11 @@
+<h1>All users:</h1>
+{{#each users}}
+    <div>Username: {{this.username}}</div>
+    <div>First name: {{this.firstName}}</div>
+    <div>Last name: {{this.lastName}}</div>
+    <form action="/admin/add/{{this._id}}" method="POST">
+        <input type="submit" value="Grand Admin rights" />
+    </form>
+    <br/>
+    <br/>
+{{/each}}
